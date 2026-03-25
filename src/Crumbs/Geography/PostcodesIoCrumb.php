@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiCrumbs\Crumbs\Geo;
+namespace ApiCrumbs\Crumbs\Geography;
 
 use ApiCrumbs\Core\Contracts\BaseCrumb;
 
@@ -10,7 +10,7 @@ use ApiCrumbs\Core\Contracts\BaseCrumb;
  */
 class PostcodesIoCrumb extends BaseCrumb
 {
-    public function getName(): string { return 'geo/postcodesio'; }
+    public function getName(): string { return 'geography/postcodesio'; }
 
     public function getDependencies(): array { return []; }
 

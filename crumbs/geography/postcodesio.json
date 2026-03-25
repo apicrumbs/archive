@@ -8,9 +8,9 @@
   "requires_key": false,
   "url": "https://postcodes.io",
   "example_id": "SW1A 2AA",
-  "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Crumbs/Geo/PostcodesIoCrumb.php",
+  "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Crumbs/Geography/PostcodesIoCrumb.php",
   "version": "1.0.2",
-  "class": "ApiCrumbs\\Crumbs\\Geo\\PostcodesIoCrumb",
-  "install_path": "src/Crumbs/Geo/PostcodesIoCrumb.php",
+  "class": "ApiCrumbs\\Crumbs\\Geography\\PostcodesIoCrumb",
+  "install_path": "src/Crumbs/Geography/PostcodesIoCrumb.php",
   "token_savings": "90"
 }
