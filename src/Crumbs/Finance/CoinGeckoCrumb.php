@@ -2,7 +2,7 @@
 
 namespace ApiCrumbs\Crumbs\Finance;
 
-use ApiCrumbs\Core\Contracts\BaseCrumb;
+use ApiCrumbs\Framework\Contracts\BaseCrumb;
 
 class CoinGeckoCrumb extends BaseCrumb 
 {

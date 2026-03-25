@@ -2,7 +2,7 @@
 
 namespace ApiCrumbs\Crumbs\Geography;
 
-use ApiCrumbs\Core\Contracts\BaseCrumb;
+use ApiCrumbs\Framework\Contracts\BaseCrumb;
 
 /**
  * PostcodeIoCrumb - The Geographic Anchor for UK Data

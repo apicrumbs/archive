@@ -2,7 +2,7 @@
 
 namespace ApiCrumbs\Crumbs\Weather;
 
-use ApiCrumbs\Core\Contracts\BaseCrumb;
+use ApiCrumbs\Framework\Contracts\BaseCrumb;
 
 /**
  * OpenMeteoCrumb - Hyper-local Weather Context

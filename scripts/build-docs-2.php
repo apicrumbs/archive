@@ -242,7 +242,7 @@ foreach ($manifest['crumbs'] as $p) {
         <div class='bg-[#0d1117] border border-black-800 rounded-2xl overflow-hidden relative'>
             <button onclick=\"copyToClipboard(this, 'code-{$slug}')\" class='absolute top-3 right-4 text-[10px] font-black text-black-500 hover:text-white uppercase tracking-widest transition'>Copy Code</button>
             <div class='bg-black-800/50 px-4 py-2 text-[10px] text-black-500 font-mono uppercase tracking-widest border-b border-black-800'>PHP 8.2+ Context Injection</div>
-            <pre id='code-{$slug}' class='p-8 text-sm leading-relaxed overflow-x-auto'><code class='text-sky-300'>use</code> <code class='text-white'>ApiCrumbs\Core\ApiCrumbs;</code>
+            <pre id='code-{$slug}' class='p-8 text-sm leading-relaxed overflow-x-auto'><code class='text-sky-300'>use</code> <code class='text-white'>ApiCrumbs\Framework\ApiCrumbs;</code>
 <code class='text-sky-300'>use</code> <code class='text-white'>{$namespace}\\{$className};</code>
 
 <code class='text-white'>\$crumbs = new ApiCrumbs();</code>

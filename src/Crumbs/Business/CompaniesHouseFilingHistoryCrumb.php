@@ -2,7 +2,7 @@
 
 namespace ApiCrumbs\Crumbs\Pro;
 
-use ApiCrumbs\Core\Contracts\BaseCrumb;
+use ApiCrumbs\Framework\Contracts\BaseCrumb;
 
 class CompaniesHouseFilingHistoryCrumb extends BaseCrumb 
 {

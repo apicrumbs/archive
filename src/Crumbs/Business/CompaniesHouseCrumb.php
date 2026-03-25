@@ -2,7 +2,7 @@
 
 namespace ApiCrumbs\Crumbs\Business;
 
-use ApiCrumbs\Core\Contracts\BaseCrumb;
+use ApiCrumbs\Framework\Contracts\BaseCrumb;
 
 /**
  * CompaniesHouseCrumb - Official UK Company Archive Access.
