@@ -1,0 +1,16 @@
+{
+  "id": "geography/postcodesio",
+  "name": "Postcodes.io",
+  "category": "Geography",
+  "tier": "free",
+  "capabilities": "UK Wards, GPS, NHS Regions",
+  "description": "Retrieve detailed information about a specific UK postcode, including latitude, longitude, and administrative areas.",
+  "requires_key": false,
+  "url": "https://postcodes.io",
+  "example_id": "SW1A 2AA",
+  "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Crumbs/Geo/PostcodesIoCrumb.php",
+  "version": "1.0.2",
+  "class": "ApiCrumbs\\Crumbs\\Geo\\PostcodesIoCrumb",
+  "install_path": "src/Crumbs/Geo/PostcodesIoCrumb.php",
+  "token_savings": "90"
+}

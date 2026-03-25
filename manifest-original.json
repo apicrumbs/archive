@@ -1,0 +1,87 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-03-05",
+  "crumbs": [
+    {
+      "id": "weather/openmeteo",
+      "name": "Open-Meteo",
+      "category": "Weather",
+      "tier": "free",
+      "capabilities": "Global Temp, Wind, Forecast",
+      "description": "Open-Meteo is an open-source, free-to-use weather API designed for non-commercial applications, providing high-resolution, real-time and historical weather data by aggregating data from national weather services. It requires no API key for basic use and offers extensive data, including 80 years of historical, 16-day forecasts, marine, and air quality data.",
+      "requires_key": false,
+      "url": "https://open-meteo.com",
+      "example_id": "51.5074,-0.1278",
+      "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Crumbs/Weather/OpenMeteoCrumb.php",
+      "version": "1.0.4",
+      "class": "ApiCrumbs\\Crumbs\\Weather\\OpenMeteoCrumb",
+      "install_path": "src/Crumbs/Weather/OpenMeteoCrumb.php",
+      "token_savings": "70"
+    },
+    {
+      "id": "geo/postcodesio",
+      "name": "Postcodes.io",
+      "category": "Geo",
+      "tier": "free",
+      "capabilities": "UK Wards, GPS, NHS Regions",
+      "description": "Retrieve detailed information about a specific UK postcode, including latitude, longitude, and administrative areas.",
+      "requires_key": false,
+      "url": "https://postcodes.io",
+      "example_id": "SW1A 2AA",
+      "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Crumbs/Geo/PostcodesIoCrumb.php",
+      "version": "1.0.2",
+      "class": "ApiCrumbs\\Crumbs\\Geo\\PostcodesIoCrumb",
+      "install_path": "src/Crumbs/Geo/PostcodesIoCrumb.php",
+      "token_savings": "90"
+    },
+    {
+      "id": "finance/coingecko",
+      "name": "CoinGecko",
+      "category": "Finance",
+      "tier": "free",
+      "capabilities": "Cryptocurrency Price, 24h Change, Market Cap",
+      "description": "Real-time cryptocurrency market data (API key needed).",
+      "requires_key": "COINGECKO_API_KEY",
+      "url": "https://coingecko.com",
+      "example_id": "bitcoin",
+      "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Crumbs/Finance/CoinGeckoCrumb.php",
+      "version": "1.0.2",
+      "class": "ApiCrumbs\\Crumbs\\Finance\\CoinGeckoCrumb",
+      "install_path": "src/Crumbs/Finance/CoinGeckoCrumb.php",
+      "token_savings": "50"
+    },
+    {
+      "id": "business/companieshouse",
+      "name": "Companies House",
+      "category": "Business",
+      "tier": "free",
+      "capabilities": "Company Status, Type, Incorporated, Address, SIC Codes",
+      "description": "The Companies House API lets you retrieve information about limited companies (API key needed).",
+      "requires_key": "COMPANIES_HOUSE_API_KEY",
+      "url": "https://find-and-update.company-information.service.gov.uk/",
+      "example_id": "SC090312",
+      "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Crumbs/Business/CompaniesHouseCrumb.php",
+      "version": "1.0.0",
+      "class": "ApiCrumbs\\Crumbs\\Business\\CompaniesHouseCrumb",
+      "install_path": "src/Crumbs/Business/CompaniesHouseCrumb.php",
+      "token_savings": "90"
+    },
+    {
+      "id": "business/companieshousesic",
+      "name": "Companies House Sic",
+      "category": "Business",
+      "tier": "free",
+      "capabilities": "Company SIC Codes, SIC Descriptions",
+      "description": "A condensed list of SIC codes for providing Companies House with a description of your company's nature of business.",
+      "requires_key": false,
+      "url": "https://www.gov.uk/government/publications/standard-industrial-classification-of-economic-activities-sic",
+      "example_id": "58210",
+      "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Crumbs/Business/CompaniesHouseSicCrumb.php",
+      "version": "1.0.0",
+      "class": "ApiCrumbs\\Crumbs\\Business\\CompaniesHouseSicCrumb",
+      "install_path": "src/Crumbs/Business/CompaniesHouseSicCrumb.php",
+      "token_savings": "90"
+    }     
+  ]
+  
+}

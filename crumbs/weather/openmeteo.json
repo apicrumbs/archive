@@ -1,0 +1,16 @@
+{
+  "id": "weather/openmeteo",
+  "name": "Open-Meteo",
+  "category": "Weather",
+  "tier": "free",
+  "capabilities": "Global Temp, Wind, Forecast",
+  "description": "Open-Meteo is an open-source, free-to-use weather API designed for non-commercial applications, providing high-resolution, real-time and historical weather data by aggregating data from national weather services. It requires no API key for basic use and offers extensive data, including 80 years of historical, 16-day forecasts, marine, and air quality data.",
+  "requires_key": false,
+  "url": "https://open-meteo.com",
+  "example_id": "51.5074,-0.1278",
+  "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Crumbs/Weather/OpenMeteoCrumb.php",
+  "version": "1.0.4",
+  "class": "ApiCrumbs\\Crumbs\\Weather\\OpenMeteoCrumb",
+  "install_path": "src/Crumbs/Weather/OpenMeteoCrumb.php",
+  "token_savings": "70"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "business/companieshousefilinghistory",
+  "name": "Companies House Filling History",
+  "category": "Business",
+  "tier": "free",
+  "capabilities": "Company Filed Date, Filing Type, Download URL",
+  "description": "This crumb leverages the Companies House Public Data API to scan a company's records and identify the most recent Accounts filing. It then provides the direct Document API URL for downloading the PDF. (API key needed).",
+  "requires_key": "COMPANIES_HOUSE_API_KEY",
+  "url": "https://find-and-update.company-information.service.gov.uk/",
+  "example_id": "SC090312",
+  "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Crumbs/Business/CompaniesHouseFilingHistoryCrumb.php",
+  "version": "1.0.0",
+  "class": "ApiCrumbs\\Crumbs\\Business\\CompaniesHouseFilingHistoryCrumb",
+  "install_path": "src/Crumbs/Business/CompaniesHouseFilingHistoryCrumb.php",
+  "token_savings": "90"
+}

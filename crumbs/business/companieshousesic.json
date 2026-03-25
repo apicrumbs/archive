@@ -1,0 +1,16 @@
+{
+  "id": "business/companieshousesic",
+  "name": "Companies House Sic",
+  "category": "Business",
+  "tier": "free",
+  "capabilities": "Company SIC Codes, SIC Descriptions",
+  "description": "A condensed list of SIC codes for providing Companies House with a description of your company's nature of business.",
+  "requires_key": false,
+  "url": "https://www.gov.uk/government/publications/standard-industrial-classification-of-economic-activities-sic",
+  "example_id": "58210",
+  "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Crumbs/Business/CompaniesHouseSicCrumb.php",
+  "version": "1.0.0",
+  "class": "ApiCrumbs\\Crumbs\\Business\\CompaniesHouseSicCrumb",
+  "install_path": "src/Crumbs/Business/CompaniesHouseSicCrumb.php",
+  "token_savings": "90"
+}
