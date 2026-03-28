@@ -1,6 +1,6 @@
 {
     "version": "2.1.0",
-    "last_updated": "2026-03-28T15:13:41+00:00",
+    "last_updated": "2026-03-28T21:46:38+00:00",
     "crumbs": [
         {
             "id": "business/companieshouse",
@@ -115,5 +115,16 @@
             "token_savings": "70"
         }
     ],
-    "recipes": []
+    "recipes": [
+        {
+            "id": "transparency/suffolkcountycouncilexpenses2026januaryledger",
+            "name": "Suffolk County Council Expenses 2026 January Ledger",
+            "description": "Expenditure exceeding \u00a3250 for Suffolk County Council Expenses 2026 January.",
+            "crumbs": [
+                "transparency/suffolkcountycouncilexpenses2026januarysupplierfinancialpulse"
+            ],
+            "difficulty": "Advanced",
+            "sector": "Transparency"
+        }
+    ]
 }

@@ -2,7 +2,7 @@
   "id": "transparency/suffolkcountycouncilexpenses2026januaryledger",
   "name": "Suffolk County Council Expenses 2026 January Ledger",
   "description": "Expenditure exceeding £250 for Suffolk County Council Expenses 2026 January.",
-  "crumbs": ["transparency/suffolkcountycouncilexpenses2026januarysupplierfinancialpulse", /*"transparency/suffolkcountycouncilexpenses2026januarysuppliertotalspend", "transparency/suffolkcountycouncilexpenses2026januarysupplierledger"*/],
+  "crumbs": ["transparency/suffolkcountycouncilexpenses2026januarysupplierfinancialpulse"],
   "difficulty": "Advanced",
   "sector": "Transparency"
 }
