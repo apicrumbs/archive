@@ -1,6 +1,6 @@
 {
     "version": "2.1.0",
-    "last_updated": "2026-03-28T21:46:38+00:00",
+    "last_updated": "2026-03-28T21:51:34+00:00",
     "crumbs": [
         {
             "id": "business/companieshouse",
@@ -124,7 +124,8 @@
                 "transparency/suffolkcountycouncilexpenses2026januarysupplierfinancialpulse"
             ],
             "difficulty": "Advanced",
-            "sector": "Transparency"
+            "sector": "Transparency",
+            "tier": "free"
         }
     ]
 }

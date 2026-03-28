@@ -4,5 +4,6 @@
   "description": "Expenditure exceeding £250 for Suffolk County Council Expenses 2026 January.",
   "crumbs": ["transparency/suffolkcountycouncilexpenses2026januarysupplierfinancialpulse"],
   "difficulty": "Advanced",
-  "sector": "Transparency"
+  "sector": "Transparency",
+  "tier": "free"
 }
