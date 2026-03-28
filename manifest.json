@@ -1,6 +1,6 @@
 {
     "version": "2.1.0",
-    "last_updated": "2026-03-28T22:06:54+00:00",
+    "last_updated": "2026-03-28T22:13:05+00:00",
     "crumbs": [
         {
             "id": "business/companieshouse",
@@ -115,21 +115,5 @@
             "token_savings": "70"
         }
     ],
-    "recipes": [
-        {
-            "id": "transparency/suffolkcountycouncilexpenses2026januaryledger",
-            "name": "Suffolk County Council Expenses 2026 January Ledger",
-            "description": "Expenditure exceeding \u00a3250 for Suffolk County Council Expenses 2026 January.",
-            "crumbs": [
-                "transparency/suffolkcountycouncilexpenses2026januarysupplierfinancialpulse"
-            ],
-            "difficulty": "Advanced",
-            "sector": "Transparency",
-            "tier": "free",
-            "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Recipes/Transparency/SuffolkCountyCouncilExpenses2026JanuaryLedgerCrumb.php",
-            "class": "ApiCrumbs\\Recipes\\Transparency\\SuffolkCountyCouncilExpenses2026JanuaryLedgerCrumb",
-            "install_path": "src/Recipes/Transparency/SuffolkCountyCouncilExpenses2026JanuaryLedgerCrumb.php",
-            "version": "1.0.0"
-        }
-    ]
+    "recipes": []
 }

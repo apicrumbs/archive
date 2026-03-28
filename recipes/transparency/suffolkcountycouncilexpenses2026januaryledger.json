@@ -9,5 +9,6 @@
   "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Recipes/Transparency/SuffolkCountyCouncilExpenses2026JanuaryLedgerCrumb.php",
   "class": "ApiCrumbs\\Recipes\\Transparency\\SuffolkCountyCouncilExpenses2026JanuaryLedgerCrumb",
   "install_path": "src/Recipes/Transparency/SuffolkCountyCouncilExpenses2026JanuaryLedgerCrumb.php",
-  "version": "1.0.0"  
+  "version": "1.0.0",
+  "example_id": "1 OAK HOME CARE",
 }
