@@ -157,7 +157,9 @@ foreach ($recipeSectors as $sec => $items) {
 
 // 8. Generate INDIVIDUAL RECIPES
 foreach ($manifest['recipes'] as $r) {
-
+    $slug = str_replace(['/', '.'], '-', strtolower($r['id']));
+    $slug = str_replace('/', '-', $r['id']);
+    
     $crumbListHtml = "";
     foreach ($r['crumbs'] as $cId) {
         $crumbListHtml .= "
@@ -224,12 +226,12 @@ foreach ($manifest['recipes'] as $r) {
     $copyButtonHtml
     ";
     
-    file_put_contents("$docsDir/recipes/{$r['id']}.html", $buildLayout($urlPrefix, $r['name'], $recipeDetail, $manifest));
+    file_put_contents("$docsDir/recipes/{$slug}.html", $buildLayout($urlPrefix, $r['name'], $recipeDetail, $manifest));
 }
 
 // 9. Generate CRUMB PAGES
 foreach ($manifest['crumbs'] as $p) {
-       $slug = str_replace(['/', '.'], '-', strtolower($p['id']));
+    $slug = str_replace(['/', '.'], '-', strtolower($p['id']));
     $slug = str_replace('/', '-', $p['id']);
     $isPro = ($p['tier'] === 'pro');
     $classNameParts = explode('.', $p['name']);
