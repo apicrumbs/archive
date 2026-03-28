@@ -1,8 +1,0 @@
-{
-  "id": "forensic-mortgage-auditor",
-  "name": "The Forensic Mortgage Auditor",
-  "description": "Cross-references geo-spatial property data with local fiscal audits to detect valuation anomalies.",
-  "crumbs": ["geo-anchor", "uk-fiscal-audit", "hmrc-property-lookup"],
-  "difficulty": "Advanced",
-  "sector": "Finance"
-}

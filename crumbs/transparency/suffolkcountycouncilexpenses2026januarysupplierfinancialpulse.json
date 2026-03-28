@@ -1,0 +1,16 @@
+{
+  "id": "transparency/suffolkcountycouncilexpenses2026januarysupplierfinancialpulse",
+  "name": "Suffolk County Council Expenses 2026 January Supplier Financial Pulse",
+  "category": "Transparency",
+  "tier": "free",
+  "capabilities": "Total Monthly Spend, Invoice Frequency, Mean Transaction Value",
+  "description": "Suffolk County Council Expenses 2026 January: Aggregates monthly spend and volume for a specific supplier.",
+  "requires_key": false,
+  "url": "https://www.suffolk.gov.uk/asset-library/scc-spend-jan-2025.csv",
+  "example_id": "1 OAK HOME CARE",
+  "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Crumbs/Transparency/SuffolkCountyCouncilExpenses2026JanuaryExpensesSupplierFinancialPulseCrumb.php",
+  "version": "1.0.0",
+  "class": "ApiCrumbs\\Crumbs\\Transparency\\SuffolkCountyCouncilExpenses2026JanuaryExpensesSupplierFinancialPulseCrumb",
+  "install_path": "src/Crumbs/Transparency/SuffolkCountyCouncilExpenses2026JanuaryExpensesSupplierFinancialPulseCrumb.php",
+  "token_savings": "90"
+}

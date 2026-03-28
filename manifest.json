@@ -1,6 +1,6 @@
 {
     "version": "2.1.0",
-    "last_updated": "2026-03-25T15:52:52+00:00",
+    "last_updated": "2026-03-28T15:13:41+00:00",
     "crumbs": [
         {
             "id": "business/companieshouse",
@@ -83,6 +83,22 @@
             "token_savings": "90"
         },
         {
+            "id": "transparency/suffolkcountycouncilexpenses2026januarysupplierfinancialpulse",
+            "name": "Suffolk County Council Expenses 2026 January Supplier Financial Pulse",
+            "category": "Transparency",
+            "tier": "free",
+            "capabilities": "Total Monthly Spend, Invoice Frequency, Mean Transaction Value",
+            "description": "Suffolk County Council Expenses 2026 January: Aggregates monthly spend and volume for a specific supplier.",
+            "requires_key": false,
+            "url": "https://www.suffolk.gov.uk/asset-library/scc-spend-jan-2025.csv",
+            "example_id": "1 OAK HOME CARE",
+            "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Crumbs/Transparency/SuffolkCountyCouncilExpenses2026JanuaryExpensesSupplierFinancialPulseCrumb.php",
+            "version": "1.0.0",
+            "class": "ApiCrumbs\\Crumbs\\Transparency\\SuffolkCountyCouncilExpenses2026JanuaryExpensesSupplierFinancialPulseCrumb",
+            "install_path": "src/Crumbs/Transparency/SuffolkCountyCouncilExpenses2026JanuaryExpensesSupplierFinancialPulseCrumb.php",
+            "token_savings": "90"
+        },
+        {
             "id": "weather/openmeteo",
             "name": "Open-Meteo",
             "category": "Weather",
@@ -99,30 +115,5 @@
             "token_savings": "70"
         }
     ],
-    "recipes": [
-        {
-            "id": "climate-risk-profiler",
-            "name": "Climate Risk Profiler",
-            "description": "Cross-references geo-spatial property data with local fiscal audits to detect valuation anomalies.",
-            "crumbs": [
-                "geo-anchor",
-                "uk-fiscal-audit",
-                "hmrc-property-lookup"
-            ],
-            "difficulty": "Advanced",
-            "sector": "Environment"
-        },
-        {
-            "id": "forensic-mortgage-auditor",
-            "name": "The Forensic Mortgage Auditor",
-            "description": "Cross-references geo-spatial property data with local fiscal audits to detect valuation anomalies.",
-            "crumbs": [
-                "geo-anchor",
-                "uk-fiscal-audit",
-                "hmrc-property-lookup"
-            ],
-            "difficulty": "Advanced",
-            "sector": "Finance"
-        }
-    ]
+    "recipes": []
 }
