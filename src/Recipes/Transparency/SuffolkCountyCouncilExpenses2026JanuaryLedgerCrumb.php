@@ -13,7 +13,7 @@ class SuffolkCountyCouncilExpenses2026JanuaryLedgerCrumb extends BaseRecipe
 
     public function getCrumbSchema(): array {
         // Tells the Press which Crumbs to load
-        return ['transparency/suffolkcountycouncilexpenses2026januarysupplierfinancialpulse', 'transparency/suffolkcountycouncilexpenses2026januarysuppliertotalspend', 'transparency/suffolkcountycouncilexpenses2026januarysupplierledger',];
+        return ['transparency/suffolkcountycouncilexpenses2026januarysupplierfinancialpulse',/* 'transparency/suffolkcountycouncilexpenses2026januarysuppliertotalspend', 'transparency/suffolkcountycouncilexpenses2026januarysupplierledger',*/];
     }
 
     public function getStitchPattern(): string {
