@@ -1,6 +1,6 @@
 {
     "version": "2.1.0",
-    "last_updated": "2026-03-28T21:51:34+00:00",
+    "last_updated": "2026-03-28T22:06:54+00:00",
     "crumbs": [
         {
             "id": "business/companieshouse",
@@ -125,7 +125,11 @@
             ],
             "difficulty": "Advanced",
             "sector": "Transparency",
-            "tier": "free"
+            "tier": "free",
+            "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Recipes/Transparency/SuffolkCountyCouncilExpenses2026JanuaryLedgerCrumb.php",
+            "class": "ApiCrumbs\\Recipes\\Transparency\\SuffolkCountyCouncilExpenses2026JanuaryLedgerCrumb",
+            "install_path": "src/Recipes/Transparency/SuffolkCountyCouncilExpenses2026JanuaryLedgerCrumb.php",
+            "version": "1.0.0"
         }
     ]
 }
