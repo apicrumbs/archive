@@ -73,7 +73,7 @@ $buildLayout = function($urlPrefix, $title, $content, $manifest) use ($sidebarHt
 <body class="flex">
     <nav class="w-80 h-screen sticky top-0 border-r border-slate-800 p-8 overflow-y-auto bg-[#0b0e14]">
         <a href="{$urlPrefix}/" class="mb-10 block flex items-center gap-3">
-            <div class="w-10 h-10 bg-sky-600 rounded-lg flex items-center justify-center font-black text-white italic text-xl shadow-lg shadow-sky-500/20">C</div>
+            <div class="w-10 h-10 bg-sky-600 rounded-lg flex items-center justify-center font-black text-white italic text-xl shadow-lg shadow-sky-500/20"><img src="https://www.apicrumbs.com/logo.svg"></div>
             <div class="flex flex-col leading-none">
                 <span class="text-white font-black text-2xl tracking-tighter italic">ApiCrumbs</span>
                 <span class="text-[8px] text-slate-500 font-bold uppercase tracking-[0.4em] mt-1">Foundry Hub</span>
