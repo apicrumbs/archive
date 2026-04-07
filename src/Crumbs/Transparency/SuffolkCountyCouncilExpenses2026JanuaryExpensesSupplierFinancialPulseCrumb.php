@@ -80,7 +80,7 @@ class SuffolkCountyCouncilExpenses2026JanuaryExpensesSupplierFinancialPulseCrumb
             'id' => $this->getReferenceId(),
             'type' => 'Accounting_Signal',
             'source' => $this->getSourceUrl(),
-            'original_source_url' => $this->masterContext['original_source_url'],
+            'original_source_url' => $this->getOriginalSourceUrl(),
         ]);
     }
         
