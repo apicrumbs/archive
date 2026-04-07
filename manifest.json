@@ -1,6 +1,6 @@
 {
     "version": "2.1.0",
-    "last_updated": "2026-04-07T15:26:35+00:00",
+    "last_updated": "2026-04-07T15:41:26+00:00",
     "crumbs": [
         {
             "id": "business/companieshouse",
@@ -93,7 +93,7 @@
             "url": "https://www.suffolk.gov.uk/asset-library/scc-spend-jan-2025.csv",
             "example_id": "1 OAK HOME CARE",
             "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Crumbs/Transparency/SuffolkCountyCouncilExpenses2026JanuaryExpensesSupplierFinancialPulseCrumb.php",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "class": "ApiCrumbs\\Crumbs\\Transparency\\SuffolkCountyCouncilExpenses2026JanuaryExpensesSupplierFinancialPulseCrumb",
             "install_path": "src/Crumbs/Transparency/SuffolkCountyCouncilExpenses2026JanuaryExpensesSupplierFinancialPulseCrumb.php",
             "token_savings": "90"

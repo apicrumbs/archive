@@ -12,7 +12,7 @@ class SuffolkCountyCouncilExpenses2026JanuaryExpensesSupplierFinancialPulseCrumb
 {
     protected string $defaultReferenceId = 'TOTAL_PULSE_ENGINE_v1';
     public function getName(): string { return 'transparency/suffolkcountycouncilexpenses2026januarysupplierfinancialpulse'; }
-    public function getVersion(): string { return '1.0.1'; }
+    public function getVersion(): string { return '1.0.2'; }
 
     public function getSourceUrl(): string 
     {
@@ -63,24 +63,27 @@ class SuffolkCountyCouncilExpenses2026JanuaryExpensesSupplierFinancialPulseCrumb
      */
     public function transform(array $data): string
     {
-        if (empty($data)) return "❌ NO_SPEND_DATA_AVAILABLE";
+        if (empty($data) || $data['invoice_count'] === 0) {
+            return "❌ NO_FINANCIAL_ACTIVITY_DETECTED";
+        }
 
         $formattedTotal = number_format($data['total_spend'], 2);
-        
+        $formattedAvg   = number_format($data['average_value'], 2);
+
         $output = [];
-        $output["### GET /finance/supplier/fiscal-footprint-analysis"] = "";
-        $output["**Cumulative Spend**"] = "£{$formattedTotal}";
-        $output["**Transaction Volume**"] = "{$data['invoice_count']} Invoices";
-        $output["**Lead Department**"] = "{$data['primary_dept']}";
-        $output["**Departmental Reach**"] = "Active in {$data['dept_count']} distinct cost centres.";
+        $output["### GET /finance/supplier/financial-pulse"] = "";
+        $output["**Total Monthly Spend**"] = "£{$formattedTotal}";
+        $output["**Invoice Frequency**"] = "{$data['invoice_count']} payments processed";
+        $output["**Mean Transaction Value**"] = "£{$formattedAvg}";
 
         return $this->autoTransform($output, [
             'id' => $this->getReferenceId(),
+            'type' => 'Accounting_Signal',
             'source' => $this->getSourceUrl(),
-            'original_source_url' => $this->getOriginalSourceUrl(),
+            'original_source_url' => $this->masterContext['original_source_url'],
         ]);
     }
-    
+        
     public function getReferenceId(): string
     {
         return $this->masterContext['referenceId'] ?? $this->defaultReferenceId;
