@@ -5,10 +5,10 @@ namespace ApiCrumbs\Crumbs\Transparency;
 use ApiCrumbs\Framework\Contracts\CsvStreamCrumb;
 
 /**
- * SuffolkCountyCouncilExpenses2026JanuaryExpensesSupplierFinancialPulseCrumb - The Accounting Engine
+ * SuffolkCountyCouncilExpenses2026JanuarySupplierFinancialPulseCrumb - The Accounting Engine
  * Aggregates monthly spend and volume for a specific supplier.
  */
-class SuffolkCountyCouncilExpenses2026JanuaryExpensesSupplierFinancialPulseCrumb extends CsvStreamCrumb
+class SuffolkCountyCouncilExpenses2026JanuarySupplierFinancialPulseCrumb extends CsvStreamCrumb
 {
     protected string $defaultReferenceId = 'TOTAL_PULSE_ENGINE_v1';
     public function getName(): string { return 'transparency/suffolkcountycouncilexpenses2026januarysupplierfinancialpulse'; }
