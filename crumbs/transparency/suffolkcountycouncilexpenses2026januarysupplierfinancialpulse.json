@@ -8,9 +8,9 @@
   "requires_key": false,
   "url": "https://www.suffolk.gov.uk/asset-library/scc-spend-jan-2025.csv",
   "example_id": "1 OAK HOME CARE",
-  "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Crumbs/Transparency/SuffolkCountyCouncilExpenses2026JanuaryExpensesSupplierFinancialPulseCrumb.php",
+  "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Crumbs/Transparency/SuffolkCountyCouncilExpenses2026JanuarySupplierFinancialPulseCrumb.php",
   "version": "1.0.2",
-  "class": "ApiCrumbs\\Crumbs\\Transparency\\SuffolkCountyCouncilExpenses2026JanuaryExpensesSupplierFinancialPulseCrumb",
-  "install_path": "src/Crumbs/Transparency/SuffolkCountyCouncilExpenses2026JanuaryExpensesSupplierFinancialPulseCrumb.php",
+  "class": "ApiCrumbs\\Crumbs\\Transparency\\SuffolkCountyCouncilExpenses2026JanuarySupplierFinancialPulseCrumb",
+  "install_path": "src/Crumbs/Transparency/SuffolkCountyCouncilExpenses2026JanuarySupplierFinancialPulseCrumb.php",
   "token_savings": "90"
 }
