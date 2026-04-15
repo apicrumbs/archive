@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><title>Companies House Filling History | ApiCrumbs Foundry</title>
+    <meta charset="UTF-8"><title>Companies House Profile | ApiCrumbs Foundry</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style> body { background: #0b0e14; color: #94a3b8; } .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); } </style>
 </head>
@@ -29,22 +29,22 @@
         <span class='text-emerald-800'>/</span>
         <a href='https://apicrumbs.github.io/archive/category/business.html' class='text-slate-600 hover:text-emerald-500 transition'>Business</a>
     </nav> 
-    <div class='flex items-center gap-4 mb-8'><span class='bg-sky-500/10 text-sky-500 border border-sky-500/20 px-4 py-1 rounded-full text-xs font-black'>CORE FREE</span> <span class='text-black-500 font-mono text-sm'>business/companieshousefilinghistory</span> <span  class='text-black-300 font-mono text-sm'>v1.0.0</span></div>
+    <div class='flex items-center gap-4 mb-8'><span class='bg-sky-500/10 text-sky-500 border border-sky-500/20 px-4 py-1 rounded-full text-xs font-black'>CORE FREE</span> <span class='text-black-500 font-mono text-sm'>business/companieshouseprofile</span> <span  class='text-black-300 font-mono text-sm'>v1.0.1</span></div>
     <div class='flex justify-between items-start mb-12'>
-        <div><h1 class='text-6xl font-black text-white italic tracking-tighter'>Companies House Filling History</h1><p class='text-xl text-black-400 mt-4'>This crumb leverages the Companies House Public Data API to scan a company's records and identify the most recent Accounts filing. It then provides the direct Document API URL for downloading the PDF. (API key needed).</p></div>
+        <div><h1 class='text-6xl font-black text-white italic tracking-tighter'>Companies House Profile</h1><p class='text-xl text-black-400 mt-4'>The Companies House API lets you retrieve information about limited companies (API key needed).</p></div>
         <div class='text-right'><div class='text-40px font-black text-emerald-500'>90%</div><div class='text-[10px] text-black-500 uppercase font-bold tracking-widest'>Token ROI</div></div>
     </div>
 
     <div class='grid md:grid-cols-1 gap-8 mb-12'>
         <!-- CLI Install with Copy -->
         <div class='bg-black border border-black-800 p-8 rounded-2xl relative group'>
-            <button onclick="copyToClipboard(this, 'cli-business-companieshousefilinghistory')" class='absolute top-4 right-4 text-[10px] font-black text-black-500 hover:text-white uppercase tracking-widest transition'>Copy</button>
+            <button onclick="copyToClipboard(this, 'cli-business-companieshouseprofile')" class='absolute top-4 right-4 text-[10px] font-black text-black-500 hover:text-white uppercase tracking-widest transition'>Copy</button>
             <div class='text-sky-500 font-bold text-xs uppercase mb-4 tracking-widest'>CLI Installation</div>
-            <code id='cli-business-companieshousefilinghistory' class='text-lg text-sm text-emerald-400 font-mono'>php vendor/bin/crumb install business/companieshousefilinghistory</code>
+            <code id='cli-business-companieshouseprofile' class='text-lg text-sm text-emerald-400 font-mono'>php vendor/bin/crumb install business/companieshouseprofile</code>
         </div>
         <div class='bg-black-900/50 border border-black-800 p-8 rounded-2xl'>
             <div class='text-black-500 font-bold text-xs uppercase mb-4 tracking-widest'>Class Reference</div>
-            <div class='text-white font-mono text-sm'>ApiCrumbs\Crumbs\Business\CompaniesHouseFillingHistoryCrumb</div>
+            <div class='text-white font-mono text-sm'>ApiCrumbs\Crumbs\Business\CompaniesHouseProfileCrumb</div>
         </div>
     </div>
 
@@ -52,23 +52,23 @@
     <div class='mb-12'>
         <h2 class='text-2xl font-black text-white mb-6 uppercase italic tracking-tight'>Implementation Example</h2>
         <div class='bg-[#0d1117] border border-black-800 rounded-2xl overflow-hidden relative'>
-            <button onclick="copyToClipboard(this, 'code-business-companieshousefilinghistory')" class='absolute top-3 right-4 text-[10px] font-black text-black-500 hover:text-white uppercase tracking-widest transition'>Copy Code</button>
+            <button onclick="copyToClipboard(this, 'code-business-companieshouseprofile')" class='absolute top-3 right-4 text-[10px] font-black text-black-500 hover:text-white uppercase tracking-widest transition'>Copy Code</button>
             <div class='bg-black-800/50 px-4 py-2 text-[10px] text-black-500 font-mono uppercase tracking-widest border-b border-black-800'>PHP 8.2+ Context Injection</div>
-            <pre id='code-business-companieshousefilinghistory' class='p-8 text-sm leading-relaxed overflow-x-auto'><code class='text-sky-300'>use</code> <code class='text-white'>ApiCrumbs\Framework\ApiCrumbs;</code>
-<code class='text-sky-300'>use</code> <code class='text-white'>ApiCrumbs\Crumbs\Business\CompaniesHouseFillingHistoryCrumb;</code>
+            <pre id='code-business-companieshouseprofile' class='p-8 text-sm leading-relaxed overflow-x-auto'><code class='text-sky-300'>use</code> <code class='text-white'>ApiCrumbs\Framework\ApiCrumbs;</code>
+<code class='text-sky-300'>use</code> <code class='text-white'>ApiCrumbs\Crumbs\Business\CompaniesHouseProfileCrumb;</code>
 
 <code class='text-white'>$crumbs = new ApiCrumbs();</code>
-<code class='text-white'>$crumbs->registerCrumb(new CompaniesHouseFillingHistoryCrumb(["COMPANIES_HOUSE_API_KEY" => "API_KEY"]));</code>
+<code class='text-white'>$crumbs->registerCrumb(new CompaniesHouseProfileCrumb(["COMPANIES_HOUSE_API_KEY" => "API_KEY"]));</code>
 
 <code class='text-sky-300'>echo</code> <code class='text-white'>$crumbs->stitch('SC090312');</code></pre>
         </div>
     </div>
     <div class='bg-black-900/30 border border-black-800 rounded-3xl p-10 font-mono text-sm'>
-        <div class='flex justify-between border-b border-black-800 pb-4 mb-4'><span class='text-black-500'>ID</span><span class='text-white'>business/companieshousefilinghistory</span></div>
-        <div class='flex justify-between border-b border-black-800 pb-4 mb-4'><span class='text-black-500'>VERSION</span><span class='text-sky-400 text-right'>1.0.0</span></div>
-        <div class='flex justify-between border-b border-black-800 pb-4 mb-4'><span class='text-black-500'>CLASS</span><span class='text-white text-right'>ApiCrumbs\Crumbs\Business\CompaniesHouseFilingHistoryCrumb</span></div>
+        <div class='flex justify-between border-b border-black-800 pb-4 mb-4'><span class='text-black-500'>ID</span><span class='text-white'>business/companieshouseprofile</span></div>
+        <div class='flex justify-between border-b border-black-800 pb-4 mb-4'><span class='text-black-500'>VERSION</span><span class='text-sky-400 text-right'>1.0.1</span></div>
+        <div class='flex justify-between border-b border-black-800 pb-4 mb-4'><span class='text-black-500'>CLASS</span><span class='text-white text-right'>ApiCrumbs\Crumbs\Business\CompaniesHouseCrumb</span></div>
         <div class='flex justify-between border-b border-black-800 pb-4 mb-4'><span class='text-black-500'>REQUIRES KEY</span><span class='text-sky-400 text-right'>COMPANIES_HOUSE_API_KEY</span></div>
-        <div class='flex justify-between'><span class='text-black-500'>CAPABILITIES</span><span class='text-white text-right'>Company Filed Date, Filing Type, Download URL</span></div>
+        <div class='flex justify-between'><span class='text-black-500'>CAPABILITIES</span><span class='text-white text-right'>Company Status, Type, Incorporated, Address, SIC Codes</span></div>
     </div></div>
     </main>
     <script>

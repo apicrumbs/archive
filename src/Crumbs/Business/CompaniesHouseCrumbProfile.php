@@ -5,12 +5,13 @@ namespace ApiCrumbs\Crumbs\Business;
 use ApiCrumbs\Framework\Contracts\BaseCrumb;
 
 /**
- * CompaniesHouseCrumb - Official UK Company Archive Access.
+ * CompaniesHouseCrumbProfile - Official UK Company Archive Access.
  * Requires a Companies House API Key (Username only, password blank).
  */
-class CompaniesHouseCrumb extends BaseCrumb 
+class CompaniesHouseCrumbProfile extends BaseCrumb 
 {
     private string $apiKey;
+    private string $id;
 
     public function __construct(array $guzzleConfig = [])
     {
@@ -23,8 +24,8 @@ class CompaniesHouseCrumb extends BaseCrumb
         parent::__construct();
     }
 
-    public function getName(): string { return 'business/companieshouse'; }
-    public function getVersion(): string { return '1.0.0'; }
+    public function getName(): string { return 'business/companieshouseprofile'; }
+    public function getVersion(): string { return '1.0.1'; }
     public function getDependencies(): array { return ['']; }
 
     /**
@@ -33,11 +34,12 @@ class CompaniesHouseCrumb extends BaseCrumb
      */
     public function fetchData(string $id, array $context = []): array 
     {
+        $this->id = $id;
         // 1. Get key from context or .env
         if (!$this->apiKey) {
             $this->apiKey = $context['COMPANIES_HOUSE_API_KEY'] ?? getenv('COMPANIES_HOUSE_API_KEY');
         }
-                
+
         // 2. Define the correct API Root
         $url = "https://api.company-information.service.gov.uk/company/{$id}";
       
@@ -77,22 +79,5 @@ class CompaniesHouseCrumb extends BaseCrumb
             'id'     => $this->id,
             'source' => 'Companies House API'
         ]);
-
-        /*if (empty($data)) return "### 🏢 COMPANY_DATA: Not Found\n";
-
-        $status = strtoupper($data['company_status'] ?? 'unknown');
-        $address = $data['registered_office_address'] ?? [];
-        $sicCodesList = implode(', ', $data['sic_codes'] ?? []);
-
-        return <<<EOD
-### COMPANY_PROFILE: {$data['company_name']} ({$data['company_number']})
-<!-- Source: Companies House | Real-time company data -->        
-- **Status**: {$status}
-- **Type**: {$data['type']}
-- **Incorporated**: {$data['date_of_creation']}
-- **Address**: {$address['address_line_1']}, {$address['postal_code']}
-- **SIC Codes**: {$sicCodesList}
-> Info: Company data is matched to the provided company number.
-EOD;*/
     }
 }
