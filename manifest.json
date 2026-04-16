@@ -1,6 +1,6 @@
 {
     "version": "2.1.0",
-    "last_updated": "2026-04-16T11:24:31+02:00",
+    "last_updated": "2026-04-16T17:46:08+02:00",
     "crumbs": [
         {
             "id": "business/companieshousefilinghistory",
@@ -28,8 +28,8 @@
             "requires_key": "COMPANIES_HOUSE_API_KEY",
             "url": "https://find-and-update.company-information.service.gov.uk/",
             "example_id": "SC090312",
-            "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Crumbs/Business/CompaniesHouseCrumb.php",
-            "version": "1.0.2",
+            "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Crumbs/Business/CompaniesHouseProfileCrumb.php",
+            "version": "1.0.3",
             "class": "ApiCrumbs\\Crumbs\\Business\\CompaniesHouseProfileCrumb",
             "install_path": "src/Crumbs/Business/CompaniesHouseProfileCrumb.php",
             "token_savings": "90"
@@ -48,6 +48,22 @@
             "version": "1.0.0",
             "class": "ApiCrumbs\\Crumbs\\Business\\CompaniesHouseSicCrumb",
             "install_path": "src/Crumbs/Business/CompaniesHouseSicCrumb.php",
+            "token_savings": "90"
+        },
+        {
+            "id": "business/companieshousestatus",
+            "name": "Companies House Status",
+            "category": "Business",
+            "tier": "free",
+            "capabilities": "Operational State, Legal Standing, Registry Authority",
+            "description": "The Companies House API lets you retrieve information about limited companies statuses (API key needed).",
+            "requires_key": "COMPANIES_HOUSE_API_KEY",
+            "url": "https://find-and-update.company-information.service.gov.uk/",
+            "example_id": "SC090312",
+            "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Crumbs/Business/CompaniesHouseStatusCrumb.php",
+            "version": "1.0.1",
+            "class": "ApiCrumbs\\Crumbs\\Business\\CompaniesHouseStatusCrumb",
+            "install_path": "src/Crumbs/Business/CompaniesHouseStatusCrumb.php",
             "token_savings": "90"
         },
         {

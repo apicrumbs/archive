@@ -5,10 +5,10 @@ namespace ApiCrumbs\Crumbs\Business;
 use ApiCrumbs\Framework\Contracts\BaseCrumb;
 
 /**
- * CompaniesHouseProfileCrumb - Official UK Company Archive Access.
+ * CompaniesHouseStatusCrumb - Official UK Company Archive Access.
  * Requires a Companies House API Key (Username only, password blank).
  */
-class CompaniesHouseProfileCrumb extends BaseCrumb 
+class CompaniesHouseStatusCrumb extends BaseCrumb 
 {
     private string $apiKey;
     private string $id;
@@ -24,8 +24,8 @@ class CompaniesHouseProfileCrumb extends BaseCrumb
         parent::__construct();
     }
 
-    public function getName(): string { return 'business/companieshouseprofile'; }
-    public function getVersion(): string { return '1.0.3'; }
+    public function getName(): string { return 'business/companieshousestatus'; }
+    public function getVersion(): string { return '1.0.1'; }
     public function getDependencies(): array { return ['']; }
 
     /**
@@ -66,14 +66,19 @@ class CompaniesHouseProfileCrumb extends BaseCrumb
 
     public function transform(array $data): string 
     {
+        $data['raw_status'] = $data['company_status'] ?? 'unknown';
+        $data['registry_ref']  = "UK_CO_HOUSE_" . $this->id;
+        $data['is_active'] = $data['raw_status'] == 'active' ? true : false;
+        $icon = $icons[$data['raw_status']] ?? '📍';
+        $label = strtoupper(str_replace('-', '_', $data['raw_status']));
+        
         // The "Meat" of the context
         $output = [
-            "### GET /business/profile/details" => '',
-            'Status'        => strtoupper($data['company_status'] ?? 'unknown'),
-            'Type'          => $data['type'],
-            'Incorporated'  => $data['date_of_creation'],
-            'Address'       => $data['registered_office_address'] ?? [],
-            'SIC Codes'     => implode(', ', $data['sic_codes'] ?? []),
+            '### GET /business/profile/status' => '',
+            '**Operational State**' => $label,
+            '**Legal Standing**' => ($data['is_active'] ? "ACTIVE_TRADING" : "NON_ACTIVE"),
+            '**Registry Authority**' => $data['registry_ref'],
+            
         ];
 
         return $this->autoTransform($output, [
