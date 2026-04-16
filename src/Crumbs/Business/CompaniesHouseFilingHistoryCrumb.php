@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiCrumbs\Crumbs\Pro;
+namespace ApiCrumbs\Crumbs\Business;
 
 use ApiCrumbs\Framework\Contracts\BaseCrumb;
 
@@ -20,7 +20,7 @@ class CompaniesHouseFilingHistoryCrumb extends BaseCrumb
         parent::__construct();
     }
 
-    public function getName(): string { return "pro/companieshousefilinghistory"; }
+    public function getName(): string { return "business/companieshousefilinghistory"; }
     public function getVersion(): string { return '1.0.0'; }
     public function getDependencies(): array { return ['']; }
 
