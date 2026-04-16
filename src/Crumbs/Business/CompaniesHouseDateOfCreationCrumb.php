@@ -5,10 +5,10 @@ namespace ApiCrumbs\Crumbs\Business;
 use ApiCrumbs\Framework\Contracts\BaseCrumb;
 
 /**
- * CompaniesHouseStatusCrumb - Official UK Company Archive Access.
+ * CompaniesHouseDateOfCreationCrumb - Official UK Company Archive Access.
  * Requires a Companies House API Key (Username only, password blank).
  */
-class CompaniesHouseStatusCrumb extends BaseCrumb 
+class CompaniesHouseDateOfCreationCrumb extends BaseCrumb 
 {
     private string $apiKey;
     private string $id;
@@ -24,7 +24,7 @@ class CompaniesHouseStatusCrumb extends BaseCrumb
         parent::__construct();
     }
 
-    public function getName(): string { return 'business/companieshousestatus'; }
+    public function getName(): string { return 'business/companieshousedateofcreation'; }
     public function getVersion(): string { return '1.0.1'; }
     public function getDependencies(): array { return ['']; }
 
@@ -49,7 +49,23 @@ class CompaniesHouseStatusCrumb extends BaseCrumb
         ];
 
         // 3. safeFetch with Headers
-        return $this->safeFetch($url, $options);
+        $data = $this->safeFetch($url, $options);
+
+        // Data usually passed from the master Company Profile pull
+        $creationDate = $data['date_of_creation'] ?? null;
+
+        if (!$creationDate) {
+            return ['status' => 'DATE_MISSING'];
+        }
+
+        $date = new \DateTime($creationDate);
+        
+        return [
+            'raw_date' => $creationDate,
+            'formatted' => $date->format('d M Y'),
+            'year' => $date->format('Y'),
+            'month' => $date->format('m')
+        ];
     }
 
     /**
@@ -66,18 +82,24 @@ class CompaniesHouseStatusCrumb extends BaseCrumb
 
     public function transform(array $data): string 
     {
-        $data['raw_status'] = $data['company_status'] ?? 'unknown';
-        $data['registry_ref']  = "UK_CO_HOUSE_" . $this->id;
-        $data['is_active'] = $data['raw_status'] == 'active' ? true : false;
-        $icon = $icons[$data['raw_status']] ?? '📍';
-        $label = strtoupper(str_replace('-', '_', $data['raw_status']));
+        if (isset($data['status'])) return "### 🧩 GET /business/profile/creation-date\n⚠️ **DATE_NOT_RECORDED**";
+
+        $output = "### 🧩 GET /corporate/creation-date\n";
+        $output .= "- **Incorporation Date**: `{$data['formatted']}`\n";
+        $output .= "- **Registration Year**: {$data['year']}\n";
+        $output .= "- **Fiscal Genesis**: Established in Month {$data['month']}\n";
+
+        return $this->wrap($output, [
+            'id' => 'DOC_v1',
+            'year' => $data['year']
+        ]);
         
         // The "Meat" of the context
         $output = [
-            '### GET /business/profile/status' => '',
-            '**Operational State**' => $label,
-            '**Legal Standing**' => ($data['is_active'] ? "ACTIVE_TRADING" : "NON_ACTIVE"),
-            '**Registry Authority**' => $data['registry_ref'],
+            '### GET /business/profile/creation-date' => '',
+            '**Incorporation Date**' => $data['formatted'],
+            '**Registration Year**' => $data['year'],
+            '**Fiscal Genesis**' => 'Established in Month '. $data['month'],
         ];
 
         return $this->autoTransform($output, [
