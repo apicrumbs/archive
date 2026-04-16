@@ -5,10 +5,10 @@ namespace ApiCrumbs\Crumbs\Business;
 use ApiCrumbs\Framework\Contracts\BaseCrumb;
 
 /**
- * CompaniesHouseCrumbProfile - Official UK Company Archive Access.
+ * CompaniesHouseProfileCrumb - Official UK Company Archive Access.
  * Requires a Companies House API Key (Username only, password blank).
  */
-class CompaniesHouseCrumbProfile extends BaseCrumb 
+class CompaniesHouseProfileCrumb extends BaseCrumb 
 {
     private string $apiKey;
     private string $id;
@@ -25,7 +25,7 @@ class CompaniesHouseCrumbProfile extends BaseCrumb
     }
 
     public function getName(): string { return 'business/companieshouseprofile'; }
-    public function getVersion(): string { return '1.0.1'; }
+    public function getVersion(): string { return '1.0.2'; }
     public function getDependencies(): array { return ['']; }
 
     /**

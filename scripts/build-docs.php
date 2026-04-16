@@ -4,10 +4,10 @@
  * Generates All Crumbs Pages Interactive, SEO-optimized Documentation Pages
  * 
  * Local:
- * php build-docs.php url=http://localhost/ApiCrumbs/Archive/docs 
+ * php scripts/build-docs.php url=http://localhost/ApiCrumbs/Archive/docs 
  * 
  * GitHub:
- * php build-docs.php url=https://apicrumbs.github.io/archive
+ * php scripts/build-docs.php url=https://apicrumbs.github.io/archive
  * 
  */
 // 1. Configuration & Args
@@ -275,7 +275,7 @@ foreach ($manifest['crumbs'] as $p) {
         <div class='bg-black border border-black-800 p-8 rounded-2xl relative group'>
             <button onclick=\"copyToClipboard(this, 'cli-{$slug}')\" class='absolute top-4 right-4 text-[10px] font-black text-black-500 hover:text-white uppercase tracking-widest transition'>Copy</button>
             <div class='text-sky-500 font-bold text-xs uppercase mb-4 tracking-widest'>CLI Installation</div>
-            <code id='cli-{$slug}' class='text-lg text-sm text-emerald-400 font-mono'>php vendor/bin/crumb install {$p['id']}</code>
+            <code id='cli-{$slug}' class='text-lg text-sm text-emerald-400 font-mono'>php vendor/bin/crumb install:crumb {$p['id']}</code>
         </div>
         <div class='bg-black-900/50 border border-black-800 p-8 rounded-2xl'>
             <div class='text-black-500 font-bold text-xs uppercase mb-4 tracking-widest'>Class Reference</div>
