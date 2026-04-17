@@ -25,7 +25,7 @@ class CompaniesHouseDateOfCreationCrumb extends BaseCrumb
     }
 
     public function getName(): string { return 'business/companieshousedateofcreation'; }
-    public function getVersion(): string { return '1.0.1'; }
+    public function getVersion(): string { return '1.0.2'; }
     public function getDependencies(): array { return ['']; }
 
     /**
@@ -89,22 +89,18 @@ class CompaniesHouseDateOfCreationCrumb extends BaseCrumb
         $output .= "- **Registration Year**: {$data['year']}\n";
         $output .= "- **Fiscal Genesis**: Established in Month {$data['month']}\n";
 
-        return $this->wrap($output, [
-            'id' => 'DOC_v1',
-            'year' => $data['year']
-        ]);
-        
         // The "Meat" of the context
         $output = [
-            '### GET /business/profile/creation-date' => '',
+            '### GET /corporate/creation-date' => '',
             '**Incorporation Date**' => $data['formatted'],
             '**Registration Year**' => $data['year'],
             '**Fiscal Genesis**' => 'Established in Month '. $data['month'],
         ];
-
+        
         return $this->autoTransform($output, [
             'id'     => $this->id,
-            'source' => 'Companies House API'
+            'source' => 'Companies House API',
+            'year' => $data['year']
         ]);
     }
 }

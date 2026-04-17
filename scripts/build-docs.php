@@ -145,9 +145,12 @@ file_put_contents("$docsDir/index.html", $buildLayout($urlPrefix, "Foundry Hub",
 // 7. Generate SECTOR PORTALS
 foreach ($recipeSectors as $sec => $items) {
     $slug = strtolower(str_replace(' ', '-', $sec));
+    $slug = strtolower(str_replace('/', '-', $sec));
     $content = "<h1 class='text-5xl font-black text-white mb-12 italic'>$sec <span class='text-slate-700'>Solutions</span></h1><div class='grid gap-4'>";
     foreach ($items as $r) {
-        $content .= "<a href='{$urlPrefix}/recipes/{$r['id']}.html' class='p-8 bg-slate-900/50 border border-slate-800 rounded-3xl hover:border-emerald-500 transition flex justify-between items-center'>
+        $recipeSlug = strtolower(str_replace(' ', '-', $r['id']));
+        $recipeSlug = strtolower(str_replace('/', '-', $recipeSlug));
+        $content .= "<a href='{$urlPrefix}/recipes/{$recipeSlug}.html' class='p-8 bg-slate-900/50 border border-slate-800 rounded-3xl hover:border-emerald-500 transition flex justify-between items-center'>
         <div><div class='text-xl text-white font-black'>{$r['name']}</div><div class='text-xs text-slate-500 mt-1'>{$r['description']}</div></div>
         <span class='text-emerald-500'>→</span></a>";
     }
@@ -162,11 +165,12 @@ foreach ($manifest['recipes'] as $r) {
     
     $crumbListHtml = "";
     foreach ($r['crumbs'] as $cId) {
+        $cIdLabel = strlen($cId) > 50 ? substr($cId, 0, 50) .'...' : $cId;
         $crumbListHtml .= "
         <div class='flex items-center gap-6 p-6 bg-slate-900/80 border border-slate-800 rounded-2xl mb-4'>
             <div class='text-2xl'>🧩</div>
             <div class='flex-1'>
-                <div class='text-white font-bold font-mono'>$cId</div>
+                <div class='text-white font-bold font-mono' title='$cId'>$cIdLabel</div>
                 <div class='text-[10px] text-slate-500 uppercase tracking-widest'>Required Sequence Layer</div>
             </div>
             <a href='{$urlPrefix}/crumbs/" . str_replace(['/','.'], '-', $cId) . ".html' class='text-sky-500 text-xs font-bold hover:underline'>View Docs →</a>
