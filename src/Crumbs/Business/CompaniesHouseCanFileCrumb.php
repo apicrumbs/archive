@@ -5,10 +5,10 @@ namespace ApiCrumbs\Crumbs\Business;
 use ApiCrumbs\Framework\Contracts\BaseCrumb;
 
 /**
- * CompaniesHouseDateOfCreationCrumb - Official UK Company Archive Access.
+ * CompaniesHouseCanFileCrumb - Official UK Company Archive Access.
  * Requires a Companies House API Key (Username only, password blank).
  */
-class CompaniesHouseDateOfCreationCrumb extends BaseCrumb 
+class CompaniesHouseCanFileCrumb extends BaseCrumb 
 {
     private string $apiKey;
     private string $id;
@@ -24,13 +24,13 @@ class CompaniesHouseDateOfCreationCrumb extends BaseCrumb
         parent::__construct();
     }
 
-    public function getName(): string { return 'business/companieshousedateofcreation'; }
+    public function getName(): string { return 'business/companieshousecanfile'; }
     public function getVersion(): string { return '1.0.1'; }
     public function getDependencies(): array { return ['']; }
 
     /**
-     * Fetches real-time company profiles.
-     * Endpoint: https://api.company-information.service.gov.uk/company/{number}
+     * @param string $id
+     * @param array $context Raw data passed from the master Companies House Profile pull
      */
     public function fetchData(string $id, array $context = []): array 
     {
@@ -51,21 +51,16 @@ class CompaniesHouseDateOfCreationCrumb extends BaseCrumb
         // 3. safeFetch with Headers
         $data = $this->safeFetch($url, $options);
 
-        // Data usually passed from the master Company Profile pull
-        $creationDate = $data['date_of_creation'] ?? null;
+        // 🛡️ Fail-safe: Ensure we treat the presence of 'can_file' as a strict boolean.
+        // Companies House usually returns true, but if missing or false, we flag it.
+        $canFile = isset($data['can_file']) ? (bool) $data['can_file'] : true;
 
-        if (!$creationDate) {
-            return ['status' => 'DATE_MISSING'];
-        }
-
-        $date = new \DateTime($creationDate);
-        
         return [
-            'raw_date' => $creationDate,
-            'formatted' => $date->format('d M Y'),
-            'year' => $date->format('Y'),
-            'month' => $date->format('m')
-        ];
+            'company_number' => $id,
+            'can_file_electronically' => $canFile,
+            'access_status' => ($canFile) ? 'OPEN_GATEWAY' : 'LOCKED_GATEWAY',
+            'is_restricted' => !$canFile
+        ];        
     }
 
     /**
@@ -82,20 +77,20 @@ class CompaniesHouseDateOfCreationCrumb extends BaseCrumb
 
     public function transform(array $data): string 
     {
-        if (isset($data['status'])) return "### 🧩 GET /business/profile/creation-date\n⚠️ **DATE_NOT_RECORDED**";
+        $label = $data['can_file_electronically'] ? 'SYSTEMS_ACTIVE' : 'FILING_RESTRICTED';
 
         // The "Meat" of the context
         $output = [
-            '### GET /business/profile/creation-date' => '',
-            '**Incorporation Date**' => $data['formatted'],
-            '**Registration Year**' => $data['year'],
-            '**Fiscal Genesis**' => 'Established in Month '. $data['month'],
+            '### GET /business/profile/filing-access' => '',
+            '**Gateway Access**' => $label,
+            '**Online Filing Enabled**' => ($data['can_file_electronically'] ? "YES" : "NO"),
+            '**Registry Protocol**' => 'Statutory WebFiling Access',
         ];
         
         return $this->autoTransform($output, [
             'id'     => $this->id,
             'source' => 'Companies House API',
-            'year' => $data['year']
+            'enabled' => $data['can_file_electronically']
         ]);
     }
 }

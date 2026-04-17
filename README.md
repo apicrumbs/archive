@@ -20,10 +20,10 @@ The Archive is a structured collection of PHP classes (Crumbs). Each Crumb is ca
 
 We use GitHub Projects (V2) to manage our development pipeline. Priorities are set by the community using Weighted Reactions: 
 
--   💡 Backlog: New ideas submitted via `php crumb suggest`.
+-   💡 Backlog: New ideas submitted via `php vendor/bin/crumb suggest`.
 -   🗳️ Voting Pool: Validated ideas waiting for Roadmap Sponsor (🚀) votes.
 -   🔥 Active Sprint: High-priority Crumbs currently in the "Kitchen" (Development).
--   ✅ Shipped: Merged and ready for `php crumb install`.
+-   ✅ Shipped: Merged and ready for `php vendor/bin/crumb install`.
 
 ➔ Explore the Interactive Roadmap
 
@@ -35,9 +35,9 @@ We invite developers and Enterprise corporations to help us reach the 10,000 st
 
 To Submit a New Crumb:
 
-1.  Scaffold Locally: Use `php crumb make [Name] [Category]` to ensure the correct namespace.
-2.  Verify Quality: Run `php crumb doctor` to check for SSL and Memory safety (XAMPP-proof).
-3.  Submit: Use `php crumb submit [Name] [Category]` to automatically open a Pull Request.
+1.  Scaffold Locally: Use `php vendor/bin/crumb make [Name] [Category]` to ensure the correct namespace.
+2.  Verify Quality: Run `php vendor/bin/crumb doctor` to check for SSL and Memory safety (XAMPP-proof).
+3.  Submit: Use `php vendor/bin/crumb submit [Name] [Category]` to automatically open a Pull Request.
 
 * * * * *
 

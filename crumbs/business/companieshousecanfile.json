@@ -1,0 +1,16 @@
+{
+  "id": "business/companieshousecanfile",
+  "name": "Companies House Can File",
+  "category": "Business",
+  "tier": "free",
+  "capabilities": "Gateway Access, Online Filing Enabled, Registry Protocol",
+  "description": "The Companies House API lets you retrieve information about limited companies filing status (API key needed).",
+  "requires_key": "COMPANIES_HOUSE_API_KEY",
+  "url": "https://find-and-update.company-information.service.gov.uk/",
+  "example_id": "SC090312",
+  "download_url": "https://raw.githubusercontent.com/apicrumbs/archive/refs/heads/main/src/Crumbs/Business/CompaniesHouseCanFileCrumb.php",
+  "version": "1.0.1",
+  "class": "ApiCrumbs\\Crumbs\\Business\\CompaniesHouseCanFileCrumb",
+  "install_path": "src/Crumbs/Business/CompaniesHouseCanFileCrumb.php",
+  "token_savings": "90"
+}
