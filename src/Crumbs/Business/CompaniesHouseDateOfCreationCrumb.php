@@ -25,7 +25,7 @@ class CompaniesHouseDateOfCreationCrumb extends BaseCrumb
     }
 
     public function getName(): string { return 'business/companieshousedateofcreation'; }
-    public function getVersion(): string { return '1.0.1'; }
+    public function getVersion(): string { return '1.0.4'; }
     public function getDependencies(): array { return ['']; }
 
     /**
@@ -64,7 +64,9 @@ class CompaniesHouseDateOfCreationCrumb extends BaseCrumb
             'raw_date' => $creationDate,
             'formatted' => $date->format('d M Y'),
             'year' => $date->format('Y'),
-            'month' => $date->format('m')
+            'month' => $date->format('m'),
+            'date_of_creation' => $data['date_of_creation'],
+            'company_status' => $data['company_status'],
         ];
     }
 
@@ -80,6 +82,57 @@ class CompaniesHouseDateOfCreationCrumb extends BaseCrumb
         return $results;
     }
 
+    protected function getPreciseAge(string $date ): string
+    {
+        $origin = new \DateTimeImmutable( $date );
+        $now = new \DateTimeImmutable(date("Y-m-d")); // Current date
+        
+        $interval = $origin->diff( $now );
+
+        return "{$interval->y} Years, {$interval->m} Months, {$interval->d} Days";
+    }
+
+    protected function getLongevityTier(string $date, string $status ): string
+    {
+        $longevity_tier = '';
+
+        $year = $this->getYear( $date );
+
+        if( $year > 10 )
+        {
+            $longevity_tier = 'ESTABLISHED';
+        }
+
+        if( $year > 3 && $year <= 10 )
+        {
+            $longevity_tier = 'STABLE';
+        }
+
+        if( $year >= 1 && $year <= 3 )
+        {
+            $longevity_tier = 'EMERGING';
+        }
+
+        if( $year < 1 )
+        {
+            $longevity_tier = 'PHOENIX_RISK';
+        }       
+
+        if( strtoupper( $status ) == 'DISSOLVED' )
+        {
+            $longevity_tier = 'DISSOLVED';
+        }
+
+        return $longevity_tier;
+    }
+
+    protected function getYear( $date )
+    {
+        $date = \DateTime::createFromFormat( "Y-m-d", $date );
+        return $date->format("Y");
+    }
+
+
     public function transform(array $data): string 
     {
         if (isset($data['status'])) return "### 🧩 GET /business/profile/creation-date\n⚠️ **DATE_NOT_RECORDED**";
@@ -89,6 +142,8 @@ class CompaniesHouseDateOfCreationCrumb extends BaseCrumb
             '### GET /business/profile/creation-date' => '',
             '**Incorporation Date**' => $data['formatted'],
             '**Registration Year**' => $data['year'],
+            '**Precise Trading Age**' => $this->getPreciseAge($data['date_of_creation']),
+            '**Longevity Tier**' => $this->getLongevityTier($data['date_of_creation'], $data['company_status']),
             '**Fiscal Genesis**' => 'Established in Month '. $data['month'],
         ];
         

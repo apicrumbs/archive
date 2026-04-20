@@ -25,7 +25,7 @@ class CompaniesHouseProfileCrumb extends BaseCrumb
     }
 
     public function getName(): string { return 'business/companieshouseprofile'; }
-    public function getVersion(): string { return '1.0.3'; }
+    public function getVersion(): string { return '1.0.4'; }
     public function getDependencies(): array { return ['']; }
 
     /**
@@ -69,6 +69,7 @@ class CompaniesHouseProfileCrumb extends BaseCrumb
         // The "Meat" of the context
         $output = [
             "### GET /business/profile/details" => '',
+            'Name'        => strtoupper($data['company_name'] ?? 'unknown'),
             'Status'        => strtoupper($data['company_status'] ?? 'unknown'),
             'Type'          => $data['type'],
             'Incorporated'  => $data['date_of_creation'],

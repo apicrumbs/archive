@@ -3,7 +3,7 @@
   "name": "Companies House Profile",
   "category": "Business",
   "tier": "free",
-  "capabilities": "Company Status, Type, Incorporated, Address, SIC Codes",
+  "capabilities": "Company Name, Company Status, Type, Incorporated, Address, SIC Codes",
   "description": "The Companies House API lets you retrieve information about limited companies (API key needed).",
   "requires_key": "COMPANIES_HOUSE_API_KEY",
   "url": "https://find-and-update.company-information.service.gov.uk/",
